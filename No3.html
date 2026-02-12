@@ -6,80 +6,81 @@
     <title>IJWBY</title>
     <style>
         body {
-            font-family: Calibri;
-            margin-left: 150px;
-			margin-right: 150px;
+            font-family: Calibri, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
             background: #f9f9f9;
-			text-align: center;
+            text-align: center;
         }
+
         h1, h2 {
             color: #333;
         }
+
         section {
             background: white;
             padding: 20px;
-			margin-left: 100px;
-			margin-right: 100px;
-			margin-top: 32px;
-            margin-bottom: 0px;
+            margin: 0 auto;
+            max-width: 700px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
+
         label {
             display: block;
             margin-top: 10px;
         }
+
         input, select, button, textarea {
             margin-top: 5px;
-            padding: 8px;
+            padding: 10px;
             width: 100%;
             box-sizing: border-box;
+            font-size: 16px;
         }
-        button:hover {
-            background: #45a049;
-        }
-		table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-        th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
+
+        button {
+            background-color: #55AA55;
+            border: none;
+            color: white;
+            padding: 16px 10px;
             text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 4px 0;
+            cursor: pointer;
+            border-radius: 8px;
         }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
         img {
             max-width: 100%;
+            height: auto;
             border-radius: 5px;
+            margin: 15px 0;
         }
-		button {
-        background-color: #55AA55;
-        border: 5px;
-        color: white;
-        padding: 30px 5px; /* Some padding */
-        text-align: center;
-        text-decoration: none; /* Remove default underline */
-        display: inline-block;
-        font-size: 18px;
-        margin: 4px 2px;
-        cursor: pointer; /* Change mouse cursor to a hand */
-        border-radius: 8px; /* Rounded corners */
-		}
-		.container {
-      display: flex;
-      gap: 20px;
-    }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
 
         .column {
-      flex: 1;
-      padding: 10px;
-      background-color: #e0e0e0;
-      border-radius: 10px;
-    }
-	
-	@media (max-width: 600px) {
+            flex: 1;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+        }
+
+        /* 📱 Mobile responsiveness */
+        @media (max-width: 600px) {
             h1 {
-                font-size: 32px;
+                font-size: 24px;
             }
 
             .container {
@@ -112,3 +113,4 @@ setTimeout(function() {
 </body>
 
 </html>
+
