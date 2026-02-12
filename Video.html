@@ -115,6 +115,16 @@
                 padding: 14px 10px;
             }
         }
+		.video-container {
+  width: 100%;
+  max-width: 800px; /* Optional */
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
     </style>
 </head>
 <body>
@@ -124,12 +134,16 @@
 <br/><br/>
 <section>
     <h1 style="font-size: 36px">Oh oo nga pala, bago ko makalimutan, tingnan mo to HAHA</h1>
-	<video controls width="500">
-	<source src="video.mp4" type="video/mp4">
-	</video>
+	<div class="video-container">
+  <video controls>
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
     <div class="container">
         </div>
     </div>
 </section>
 </body>
 </html>
+
