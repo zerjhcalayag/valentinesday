@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IJWBY</title>
+    <style>
+        body {
+            font-family: Calibri, Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        section {
+            background: white;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 700px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select, button, textarea {
+            margin-top: 5px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #55AA55;
+            border: none;
+            color: white;
+            padding: 16px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 4px 0;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .column {
+            flex: 1;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+        }
+
+        /* 📱 Mobile responsiveness */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 14px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<section>
+    <h1 style="font-size: 36px">Will you be my valentine? 🙏🏿</h1>
+    
+    <!-- GIF -->
+	<img id="mainGif" src="cat-meme-elgatitolover.gif">
+
+    <div class="container">
+        <div class="column">
+            <button onclick="window.location.href='Celebration.html'">Yes 😇🙏🏿</button>
+        </div>
+        <div class="column">
+        <button type="button" style="background-color:#dd5555" onclick="randomRedirect()">No 😓</button>
+		
+		<script>
+function randomRedirect() {
+    const websites = [
+        "No1.html",
+        "No2.html",
+        "No3.html",
+		"No4.html",
+        "No5.html",
+        "No6.html",
+    ];
+
+    const randomIndex = Math.floor(Math.random() * websites.length);
+    window.location.href = websites[randomIndex];
+}
+</script>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IJWBY</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #AA4444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: white;
+    }
+
+    .lockscreen {
+      width: 320px;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 32px;
+      margin-bottom: 20px;
+      opacity: 0.85;
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1.5px solid white;
+      opacity: 0.6;
+    }
+
+    .dot.filled {
+      background-color: white;
+      opacity: 1;
+    }
+
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      justify-items: center;
+    }
+
+    .key {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: rgba(85, 5, 5, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.15s ease;
+    }
+
+    .key:active {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .key.small {
+      font-size: 14px;
+    }
+
+    .bottom-row {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 14px;
+      min-height: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lockscreen">
+    <div class="title">Enter our anniversary 🤨</div>
+
+    <div class="dots" id="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+
+    <div class="keypad">
+      <div class="key" onclick="addDigit('1')">1</div>
+      <div class="key" onclick="addDigit('2')">2</div>
+      <div class="key" onclick="addDigit('3')">3</div>
+      <div class="key" onclick="addDigit('4')">4</div>
+      <div class="key" onclick="addDigit('5')">5</div>
+      <div class="key" onclick="addDigit('6')">6</div>
+      <div class="key" onclick="addDigit('7')">7</div>
+      <div class="key" onclick="addDigit('8')">8</div>
+      <div class="key" onclick="addDigit('9')">9</div>
+      <div class="key small" onclick="clearCode()">Clear</div>
+      <div class="key" onclick="addDigit('0')">0</div>
+      <div class="key small" onclick="checkPasscode()">Enter</div>
+    </div>
+
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    const correctPasscode = "102925"; // Change this to your desired 6-digit passcode
+    let inputCode = "";
+
+    function addDigit(digit) {
+      if (inputCode.length < 6) {
+        inputCode += digit;
+        updateDots();
+      }
+    }
+
+    function updateDots() {
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('filled', index < inputCode.length);
+      });
+    }
+
+    function clearCode() {
+      inputCode = "";
+      updateDots();
+      document.getElementById('message').textContent = "";
+    }
+
+    function checkPasscode() {
+      const message = document.getElementById('message');
+
+      if (inputCode.length !== 6) {
+        message.style.color = "#ffcc00";
+        message.textContent = "Enter all 6 digits.";
+        return;
+      }
+
+      if (inputCode === correctPasscode) {
+        message.style.color = "#4cd964";
+        message.textContent = "Yoo what up beb!";
+		setTimeout(function() {
+        window.location.replace('IJWBY.html');}, 2000);
+      } else {
+        message.style.color = "#ff3b30";
+        message.textContent = "You ain't my beb 🖕🏿";
+      }
+
+      inputCode = "";
+      updateDots();
+    }
+  </script>
+
+</body>
+</html>
